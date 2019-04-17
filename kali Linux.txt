@@ -6,3 +6,8 @@ pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubuser
 
 wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/DesktopEnvironment/Apt/Xfce4/de-apt-xfce4.sh && bash de-apt-xfce4.sh
 
+-----------------------------
+Uninstall Kali Linux 
+-----------------------------
+
+wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Kali/UNI-kali.sh && bash UNI-kali.sh
