@@ -1,0 +1,27 @@
+-------------------------------------------------------------
+HOW TO INSTALL UBUNTU ON ANDROID.
+-------------------------------------------------------------
+
+apt update && apt upgrade
+
+pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh
+
+./start-ubuntu.sh
+
+wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/DesktopEnvironment/Apt/Xfce4/de-apt-xfce4.sh && bash de-apt-xfce4.sh
+
+-------------------------------------------------------------
+START /STOP VNC SERVER 
+-------------------------------------------------------------
+
+vncserver-start
+
+vncserver-stop
+
+
+-------------------------------------------------------------
+UNINSTALL UBUNTU FROM ANDROID
+-------------------------------------------------------------
+
+
+wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Ubuntu/UNI-ubuntu.sh && bash UNI-ubuntu.sh
