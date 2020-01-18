@@ -1,0 +1,35 @@
+------------------------------------------
+
+Log in Ubuntu without key pair or SSH Key.
+
+ -----------------------------------------
+
+(1) log in to your Ubuntu server via SSH client's using SSH Key first.
+
+sudo su
+
+nano /etc/ssh
+
+nano sshd_config
+
+
+#You need to replace lines like this.(change no to yes). 
+
+ PasswordAuthentication yes
+
+PermitRootLogin yes
+
+Save file. 
+
+(2) Restart your SSH services. 
+
+sudo service ssh restart
+
+(3) Reboot server. 
+
+sudo reboot
+
+
+Done now log in your ubuntu server using password. No need key now. 
+
+
