@@ -1,0 +1,45 @@
+ pkg update && pkg upgrade -y
+
+
+pkg install wget -y
+
+
+pkg install openssl-tool -y
+
+
+pkg install proot -y
+
+
+hash -r 
+
+
+wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh
+
+
+./start-ubuntu.sh
+
+
+apt update -y
+
+
+apt upgrade -y
+
+
+apt install nano
+
+
+wget https://github.com/cdr/code-server/releases/download/2.1698/code-server2.1698-vsc1.41.1-linux-arm64.tar.gz
+
+
+
+tar -xvf ./code-server2.1698-vsc1.41.1-linux-arm64.tar.gz
+
+
+cp ./code-server2.1698-vsc1.41.1-linux-arm64/code-server /bin
+
+
+
+export PASSWORD="<your_password>"
+
+
+
