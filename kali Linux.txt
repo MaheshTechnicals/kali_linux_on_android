@@ -1,13 +1,39 @@
+# Installing Kali Linux on Android
+
+## Installation Steps
+
+1. Update and upgrade packages:
+```bash
 apt update && apt upgrade
+```
 
+2. Install required packages and download installation script:
+```bash
 pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Kali/kali.sh && bash kali.sh
+```
 
+3. Start Kali Linux:
+```bash
 ./start-kali.sh
+```
 
+4. Install XFCE Desktop Environment:
+```bash
 wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/DesktopEnvironment/Apt/Xfce4/de-apt-xfce4.sh && bash de-apt-xfce4.sh
+```
 
------------------------------
-Uninstall Kali Linux 
------------------------------
+## Uninstalling Kali Linux
 
+To remove Kali Linux from your Android device:
+```bash
 wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Kali/UNI-kali.sh && bash UNI-kali.sh
+```
+
+## Using Kali Linux
+After installation, you can:
+- Use VNC Viewer to connect to the graphical interface
+- Install additional Kali tools using apt
+- Run penetration testing tools through the command line or GUI
+
+## Note
+Remember that all security testing should only be performed on systems you own or have explicit permission to test.

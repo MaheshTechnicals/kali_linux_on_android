@@ -1,27 +1,45 @@
--------------------------------------------------------------
-HOW TO INSTALL UBUNTU ON ANDROID.
--------------------------------------------------------------
+# HOW TO INSTALL UBUNTU ON ANDROID
 
+## Installation Steps
+
+1. Update and upgrade packages:
+```bash
 apt update && apt upgrade -y
+```
 
+2. Install required packages and download installation script:
+```bash
 pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh
+```
 
+3. Start Ubuntu:
+```bash
 ./start-ubuntu.sh
+```
 
+4. Install XFCE Desktop Environment:
+```bash
 wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/DesktopEnvironment/Apt/Xfce4/de-apt-xfce4.sh && bash de-apt-xfce4.sh
+```
 
--------------------------------------------------------------
-START /STOP VNC SERVER 
--------------------------------------------------------------
+## VNC Server Management
 
+### Start VNC Server
+```bash
 vncserver-start
+```
 
+### Stop VNC Server
+```bash
 vncserver-stop
+```
 
+## Uninstallation
 
--------------------------------------------------------------
-UNINSTALL UBUNTU FROM ANDROID
--------------------------------------------------------------
-
-
+To remove Ubuntu from your Android device:
+```bash
 wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Uninstaller/Ubuntu/UNI-ubuntu.sh && bash UNI-ubuntu.sh
+```
+
+## Note
+After installation, connect to the Ubuntu environment using a VNC viewer. The default VNC address is typically `localhost:1`.

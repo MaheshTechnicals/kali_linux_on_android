@@ -1,101 +1,90 @@
------------------------------------------------------------------
+# How To Install Kali Linux On Android Full Version Without Root
 
+## Overview
+This guide provides step-by-step instructions for installing a complete Kali Linux environment on Android without requiring root access.
 
- How To Install Kali Linux On Android Full Version Without Root.
+## Resource Link
+For the full guide with additional details, visit:
+[Kali Linux on Android - Full Guide](https://maheshtechnicals.com/2020/02/16/kali-linux-on-android/)
 
+## Installation Steps
 
+### 1. Prepare Termux Environment
 
------------------------------------------------------------------
-
-
-                         All Cammands :
-
-
-__________________________________________
-
-
-Full Article Link : 
-
-
-https://maheshtechnicals.com/2020/02/16/kali-linux-on-android/
-
-
-___________________________________________
-
-
-
-
-# Update Termux Packages. 
-
-
+Update Termux packages:
+```bash
 pkg update -y
+```
 
-
-
-
-# upgrade Termux. 
-
+Upgrade Termux:
+```bash
 pkg upgrade -y
+```
 
-
-
-
-# Install Fish Package. 
-
+Install Fish shell:
+```bash
 pkg install fish -y
+```
 
-
-
-
-# Enter in to FISH mode. 
-
+Enter Fish shell mode:
+```bash
 fish
+```
 
+### 2. Setup Storage and Dependencies
 
-
-
-# Give phone storage Permission. 
-
+Give storage permissions to Termux:
+```bash
 termux-setup-storage
+```
 
-
-
-
-# install Wget package. 
-
+Install wget package:
+```bash
 pkg install wget -y
+```
 
+### 3. Install Kali NetHunter
 
-
-
-# initialize Kali nethunter repo. 
-
+Download the NetHunter installation script:
+```bash
 wget -O install-nethunter-termux https://offs.ec/2MceZWr
+```
 
-
-
-
-# change permissions. 
-
+Make the script executable:
+```bash
 chmod +x install-nethunter-termux
+```
 
-
-
-
-# Download & Indtall Kali Linux On Android. 
-
+Run the installation script:
+```bash
 ./install-nethunter-termux
+```
 
+### 4. Configure and Start the Environment
 
-
-
-# Set password For kex or VNC. 
-
+Set a password for the VNC/KEX service:
+```bash
 nethunter kex passwd
+```
 
-
-
-
-# start kex or VNC server. 
-
+Start the KEX/VNC server:
+```bash
 nethunter kex &
+```
+
+## Usage Instructions
+- Connect to Kali using the KeX client
+- Default VNC address is localhost:5901 or 127.0.0.1:1
+- Use the password you set during configuration
+
+## Additional Tools
+After installation, you can install additional Kali tools with:
+```bash
+apt update && apt install <tool-name>
+```
+
+## Troubleshooting
+If you encounter issues:
+- Check the NetHunter service status: `nethunter status`
+- Restart the KeX server: `nethunter kex stop` followed by `nethunter kex &`
+- Ensure your device has sufficient storage space

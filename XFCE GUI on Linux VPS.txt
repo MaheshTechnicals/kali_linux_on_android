@@ -1,23 +1,61 @@
- $ sudo apt update
+# Installing XFCE GUI on Linux VPS
 
-$ sudo apt install xfce4 xfce4-goodies
+## Installation Steps
 
-$ sudo apt install tightvncserver
+1. Update package lists:
+```bash
+sudo apt update
+```
 
-$ vncserver
+2. Install XFCE desktop environment:
+```bash
+sudo apt install xfce4 xfce4-goodies
+```
 
-$ vncserver -kill :1
+3. Install TightVNC Server:
+```bash
+sudo apt install tightvncserver
+```
 
-$ mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+4. Start VNC server for initial configuration:
+```bash
+vncserver
+```
 
-$ nano ~/.vnc/xstartup
+5. Stop the VNC server to edit the configuration:
+```bash
+vncserver -kill :1
+```
 
-(paste the follow being in the xstartup file and write out)
+6. Backup the original xstartup file:
+```bash
+mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+```
 
+7. Create a new xstartup file:
+```bash
+nano ~/.vnc/xstartup
+```
+
+8. Add the following content to the xstartup file:
+```bash
 #!/bin/bash
 xrdb $HOME/.Xresources
 startxfce4 &
+```
 
-$ sudo chmod +x ~/.vnc/xstartup
+9. Make the xstartup file executable:
+```bash
+sudo chmod +x ~/.vnc/xstartup
+```
 
-$ vncserver
+10. Restart the VNC server:
+```bash
+vncserver
+```
+
+## Connecting to Your VPS
+Connect to your VPS using a VNC client with the address: `your_server_ip:1` or `your_server_ip:5901`
+
+## Note
+Make sure port 5901 is open in your firewall or security group settings.

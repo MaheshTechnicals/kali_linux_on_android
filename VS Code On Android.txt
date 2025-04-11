@@ -1,45 +1,72 @@
- pkg update && pkg upgrade -y
+# Installing VS Code on Android
 
+## Prerequisites
 
+1. Update and upgrade packages:
+```bash
+pkg update && pkg upgrade -y
+```
+
+2. Install required packages:
+```bash
 pkg install wget -y
-
-
 pkg install openssl-tool -y
-
-
 pkg install proot -y
+hash -r
+```
 
+## Installing Ubuntu
 
-hash -r 
-
-
+1. Download and run the Ubuntu installation script:
+```bash
 wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh
+```
 
-
+2. Start Ubuntu:
+```bash
 ./start-ubuntu.sh
+```
 
-
+3. Update and upgrade Ubuntu packages:
+```bash
 apt update -y
-
-
 apt upgrade -y
+```
 
-
+4. Install nano text editor:
+```bash
 apt install nano
+```
 
+## Installing Code Server (VS Code in Browser)
 
+1. Download Code Server for ARM64:
+```bash
 wget https://github.com/cdr/code-server/releases/download/2.1698/code-server2.1698-vsc1.41.1-linux-arm64.tar.gz
+```
 
-
-
+2. Extract the archive:
+```bash
 tar -xvf ./code-server2.1698-vsc1.41.1-linux-arm64.tar.gz
+```
 
-
+3. Copy code-server to bin directory:
+```bash
 cp ./code-server2.1698-vsc1.41.1-linux-arm64/code-server /bin
+```
 
+4. Set a password for Code Server:
+```bash
+export PASSWORD="your_password_here"
+```
 
+5. Start Code Server:
+```bash
+code-server --host 0.0.0.0 --port 8080
+```
 
-export PASSWORD="<your_password>"
+## Accessing VS Code
+After starting the code-server, you can access VS Code through your web browser at `http://localhost:8080`
 
 
 
